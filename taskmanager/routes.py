@@ -82,6 +82,9 @@ def edit_task(task_id):
     return render_template("edit_task.html", task=task, categories=categories)
 
 
+# Need follow defensive programing for deleting task
+# Need to have authentication also
+# Ensure to include in milestone project
 @app.route("/delete_task/<int:task_id>")
 def delete_task(task_id):
     task = Task.query.get_or_404(task_id)
